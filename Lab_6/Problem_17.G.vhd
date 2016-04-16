@@ -36,11 +36,11 @@ architecture Structure of Adder_6 is
   signal C: bit_vector(5 downto 1);
 begin
   F0: Full_Adder port map (A(0), B(0), Ci, C(1), S(0));
-  F1: Full_Adder port map (A(1), B(1), C(0), C(2), S(1));
+  F1: Full_Adder port map (A(1), B(1), C(1), C(2), S(1));
   F2: Full_Adder port map (A(2), B(2), C(2), C(3), S(2));
   F3: Full_Adder port map (A(3), B(3), C(3), C(4), S(3));
   F4: Full_Adder port map (A(4), B(4), C(4), C(5), S(4));
-  F5: Full_Adder port map (A(5), B(5), C(5), C0, S(5));
+  F5: Full_Adder port map (A(5), B(5), C(5), Co, S(5));
 end Structure;
 
   
