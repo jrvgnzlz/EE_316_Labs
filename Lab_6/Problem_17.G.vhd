@@ -67,8 +67,9 @@ begin                                           -- uninterupted state
   process(Clk, Clr_N)
   begin
     if Clr_N = '0' then Qint <= '0';            -- Asynchronis
-    elseif (Clk'event and Clk = '1' and Add = '1') then
-      Qint <= D;
+    elseif Clk'event and Clk = '1' then
+      if Add = '1' then Qint <= D;
+      end if;
     end if;
   end process;                      
 
