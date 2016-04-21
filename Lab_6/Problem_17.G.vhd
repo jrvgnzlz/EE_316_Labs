@@ -16,7 +16,7 @@ end Full_Adder;
 architecture Structure of Full_Adder is
   signal C: bit_vector(4 downto 0);     -- Internal Carry
   begin
-      process (Q, D, Cin)               -- Sensitive
+      process (Q, D)               -- Sensitive
         begin
         Z(0) <= Q(0) xor D(0);
         Z(1) <= Q(1) xor D(1) xor C(0);
@@ -31,7 +31,7 @@ architecture Structure of Full_Adder is
         C(3) <= (Q(3) and D(3)) or (Q(3) and C(2)) or (D(3) and C(2));
         C(4) <= (Q(4) and D(4)) or (Q(4) and C(3)) or (D(4) and C(3));
     end process;
-        
+end Structure;        
 --architecture Equations of Full_Adder is
 --begin
 --  Sum <= X xor Y xor Cin;
@@ -65,34 +65,34 @@ architecture Structure of Full_Adder is
 --Sequential Code--
 -------------------
 
--- D-CE Flip Flop
+---- D-CE Flip Flop
 
-entity D_CE is
-  port(Clr_N, Clk, Add: in bit; D: in bit_vector(5 downto 0);    -- inputs
-       Q, QN: out bit_vector(5 downto 0) );                      -- ouputs
-end D_CE;
+--entity D_CE is
+--  port(Clr_N, Clk, Add: in bit; D: in bit_vector(5 downto 0);    -- inputs
+--       Q, QN: out bit_vector(5 downto 0) );                      -- ouputs
+--end D_CE;
 
--- Remark: In the declaration above, Add = Enable.
+---- Remark: In the declaration above, Add = Enable.
 
-architecture D_CE_6 of D_CE is
-  signal Qint: bit_vector(5 downto 0);          -- internal signals
+--architecture D_CE_6 of D_CE is
+--  signal Qint: bit_vector(5 downto 0);          -- internal signals
 
-begin                                           -- uninterupted state
-  Q <= Qint;
-  QN <= not Qint;
+--begin                                           -- uninterupted state
+--  Q <= Qint;
+--  QN <= not Qint;
 
-  process(Clk, Clr_N)
-  begin
-    if Clr_N = '0' then Qint <= "000000";            -- Asynchronis
-    elsif Clk'event and Clk = '1' then
-      if Add = '1' then Qint <= D;
-      end if;
-    end if;
-  end process;                      
+--  process(Clk, Clr_N)
+--  begin
+--    if Clr_N = '0' then Qint <= "000000";            -- Asynchronis
+--    elsif Clk'event and Clk = '1' then
+--      if Add = '1' then Qint <= D;
+--      end if;
+--    end if;
+--  end process;                      
 
--- Remark: The following process only does two things:
---          * Clears Qint iff ClrN is active.
---          * Sets Qint to D iff AND(Clk_N, Add, Clk'event) = 1;
---
+---- Remark: The following process only does two things:
+----          * Clears Qint iff ClrN is active.
+----          * Sets Qint to D iff AND(Clk_N, Add, Clk'event) = 1;
+----
                          
-end D_CE_6;
+--end D_CE_6;
