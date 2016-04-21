@@ -3,7 +3,7 @@
 ----------------------------------------------------------------------------------
 entity Accumulator is
   port(D: in bit_vector(5 downto 0); Clr, Clk, Ad: in bit;
-       Q: out bit_vector(5 downto 0));
+       Q, QN: out bit_vector(5 downto 0));
   end Accumulator;
 
   architecture Structure of Accumulator is
