@@ -39,14 +39,14 @@ entity Accumulator is
 ------------
 --Proccess--
 ------------
-      process (Clr, Clk)
-        begin
-          if Clr = '0' then Qint <= "000000";   -- Asynchronis
-          elsif Clk'event and Clk = '1' then
-            if Ad = '1' then Qint <= D;
-            end if;
-          end if;
-      end process;
+      --process (Clr, Clk)
+      --  begin
+      --    if Clr = '0' then Qint <= "000000";   -- Asynchronis
+      --    elsif Clk'event and Clk = '1' then
+      --      if Ad = '1' then Qint <= D;
+      --      end if;
+      --    end if;
+      --end process;
 
 --Remark: The following process only does two things:
 --          * Clears Qint iff ClrN is active.
