@@ -51,14 +51,14 @@ end Structure;
 -- D-CE Flip Flop
 
 entity D_CE is
-  port(Clr_N, Clk, D, Add: in bit;              -- inputs
-       Q, QN: out bit);                         -- ouputs
+  port(Clr_N, Clk, Add: in bit; D: in bit_vector(5 downto 0);    -- inputs
+       Q, QN: out bit_vector(5 downto 0) );                      -- ouputs
 end D_CE;
 
 -- Remark: In the declaration above, Add = Enable.
 
 architecture D_CE_6 of D_CE is
-  signal Qint: bit;                             -- internal signals
+  signal Qint: bit_vector(5 downto 0);          -- internal signals
 
 begin                                           -- uninterupted state
   Q <= Qint;
@@ -67,7 +67,7 @@ begin                                           -- uninterupted state
   process(Clk, Clr_N)
   begin
     if Clr_N = '0' then Qint <= '0';            -- Asynchronis
-    elseif Clk'event and Clk = '1' then
+    elsif Clk'event and Clk = '1' then
       if Add = '1' then Qint <= D;
       end if;
     end if;
