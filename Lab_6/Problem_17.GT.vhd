@@ -23,18 +23,18 @@ entity Accumulator is
      
       process (Q, D, C)                         -- 6-Bit Full Adder
         begin
-        Z(0) <= Q(0) xor D(0);
-        Z(1) <= Q(1) xor D(1) xor C(0);
-        Z(2) <= Q(2) xor D(2) xor C(1);
-        Z(3) <= Q(3) xor D(3) xor C(2);
-        Z(4) <= Q(4) xor D(4) xor C(3);
-        Z(5) <= Q(5) xor D(5) xor C(4);
+        Z(0) <= Qint(0) xor D(0);
+        Z(1) <= Qint(1) xor D(1) xor C(0);
+        Z(2) <= Qint(2) xor D(2) xor C(1);
+        Z(3) <= Qint(3) xor D(3) xor C(2);
+        Z(4) <= Qint(4) xor D(4) xor C(3);
+        Z(5) <= Qint(5) xor D(5) xor C(4);
 
-        C(0) <= (Q(0) and D(0));
-        C(1) <= (Q(1) and D(1)) or (Q(1) and C(0)) or (D(1) and C(0));
-        C(2) <= (Q(2) and D(2)) or (Q(2) and C(1)) or (D(2) and C(1));
-        C(3) <= (Q(3) and D(3)) or (Q(3) and C(2)) or (D(3) and C(2));
-        C(4) <= (Q(4) and D(4)) or (Q(4) and C(3)) or (D(4) and C(3));
+        C(0) <= (Qint(0) and D(0));
+        C(1) <= (Qint(1) and D(1)) or (Qint(1) and C(0)) or (D(1) and C(0));
+        C(2) <= (Qint(2) and D(2)) or (Qint(2) and C(1)) or (D(2) and C(1));
+        C(3) <= (Qint(3) and D(3)) or (Qint(3) and C(2)) or (D(3) and C(2));
+        C(4) <= (Qint(4) and D(4)) or (Qint(4) and C(3)) or (D(4) and C(3));
       end process;
 
 ------------
