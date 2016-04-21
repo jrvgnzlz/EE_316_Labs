@@ -44,4 +44,37 @@ begin
 end Structure;
 
   
-  
+-------------------
+--Sequential Code--
+-------------------
+
+-- D-CE Flip Flop
+
+entity D_CE is
+  port(Clr_N, Clk, D, Add: in bit;              -- inputs
+       Q, QN: out bit);                         -- ouputs
+end D_CE;
+
+-- Remark: In the declaration above, Add = Enable.
+
+architecture D_CE_6 of D_CE is
+  signal Qint: bit;                             -- internal signals
+
+begin                                           -- uninterupted state
+  Q <= Qint;
+  QN <= not Qint;
+
+  process(Clk, Clr_N)
+  begin
+    if Clr_N = '0' then Qint <= '0';            -- Asynchronis
+    elseif (Clk'event and Clk = '0') and Add = '1' then
+      Qint <= D;
+    endif;
+  end process;                      
+
+-- Remark: The following process only does two things:
+--          * Clears Qint iff ClrN is active.
+--          * Sets Qint to D iff AND(Clk_N, Add, Clk'event) = 1;
+--
+                         
+end D_CE_6;
