@@ -21,7 +21,7 @@ entity Accumulator is
 --Combinatorial Code--
 ----------------------    
      
-      process (Q, D, C)                         -- 6-Bit Full Adder
+      process (Qint, D, C)                       -- 6-Bit Full Adder
         begin
         Z(0) <= Qint(0) xor D(0);
         Z(1) <= Qint(1) xor D(1) xor C(0);
