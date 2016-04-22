@@ -44,7 +44,7 @@ entity Accumulator is
         begin
           if Clr = '0' then Qint <= "000000";   -- Asynchronis
           elsif Clk'event and Clk = '1' then
-            if Ad = '1' then Qint <= D;
+            if Ad = '1' then Qint <= Z;
             end if;
           end if;
       end process;
