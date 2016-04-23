@@ -1,0 +1,19 @@
+----------------
+--Problem 16-7--
+----------------
+
+entity SM_16_7 is
+  port(X, Clk: in bit;
+       Z: out bit);
+  end SM_16_7;
+
+architecture Table of SM_16_7 is
+  signal State, Nextstate: integer range 0 to 5 := 0;
+  
+begin
+  process(State, X)
+  begin
+    case State is
+      when 0 =>
+        if X = '' then Z = ''; Nextstate <= 1;
+        else Z <= ''; Nextstate <= ; end if;
