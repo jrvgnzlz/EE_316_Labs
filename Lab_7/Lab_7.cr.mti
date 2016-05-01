@@ -1,0 +1,11 @@
+//VBOXSVR/EE_316_Labs/Lab_7/Problem_20.vhd {1 {vcom -work work -2002 -explicit -stats=none //VBOXSVR/EE_316_Labs/Lab_7/Problem_20.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity Product_Sum
+-- Compiling architecture Control_Signals of Product_Sum
+
+} {} {}}

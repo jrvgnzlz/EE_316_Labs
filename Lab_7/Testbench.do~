@@ -1,0 +1,2 @@
+force Clk 0 0 -repeat 200ns
+force Clk 1 100 -repeat 200ns
