@@ -1,0 +1,29 @@
+entity Counter_4 is
+  port(ClrN, LOAD, ENT, ENP, UP: std_logic; -- 1 bit inputs
+       D: in std_logic_vector(3 downto 0);
+       Q: out std_logic_vector(3 downto 0);
+       Co: out std_logic);
+  end Counter_4;
+
+architecture State of Counter_4 is
+
+  signal qint: std_logic_vector(3 downto 0);
+  signal carry_int: std_logic;
+  signal appended_signal: std_logic_vector(4 downto 0);
+
+  begin
+    Q <= qint;
+    Co <= carry_int;
+    appended_signal <= ('0' & qint) + ('0' & D);
+
+    process(ClrN, Clk)
+      begin
+        if ClrN = '0' then
+          qint <= "0000";
+          carry_int <= '0';
+
+        elsif (Clk'event and Clk = 1) then
+
+          if (LOAD = '1' and ENT = '1' and ENP = '1' and UP = '1') then
+            qint
+         
