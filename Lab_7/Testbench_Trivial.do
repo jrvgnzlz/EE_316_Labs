@@ -6,6 +6,6 @@ force Start 1 0
 force Rst 0 0
 
 
-force x 1111 0
-force y 1111 0
-force z 111 0
+force x 0000 0
+force y 0000 0
+force z 000 0
