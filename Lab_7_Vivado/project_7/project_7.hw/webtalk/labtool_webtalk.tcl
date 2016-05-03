@@ -1,0 +1,28 @@
+webtalk_init -webtalk_dir /home/jrvgnzlz/EE_316_Labs/Lab_7_Vivado/project_7/project_7.hw/webtalk/
+webtalk_register_client -client project
+webtalk_add_data -client project -key date_generated -value "Tue May  3 06:47:40 2016" -context "software_version_and_target_device"
+webtalk_add_data -client project -key product_version -value "Vivado v2015.4 (64-bit)" -context "software_version_and_target_device"
+webtalk_add_data -client project -key build_version -value "1412921" -context "software_version_and_target_device"
+webtalk_add_data -client project -key os_platform -value "LIN64" -context "software_version_and_target_device"
+webtalk_add_data -client project -key registration_id -value "211159377_1777515258_0_320" -context "software_version_and_target_device"
+webtalk_add_data -client project -key tool_flow -value "labtool" -context "software_version_and_target_device"
+webtalk_add_data -client project -key beta -value "FALSE" -context "software_version_and_target_device"
+webtalk_add_data -client project -key route_design -value "FALSE" -context "software_version_and_target_device"
+webtalk_add_data -client project -key target_family -value "not_applicable" -context "software_version_and_target_device"
+webtalk_add_data -client project -key target_device -value "not_applicable" -context "software_version_and_target_device"
+webtalk_add_data -client project -key target_package -value "not_applicable" -context "software_version_and_target_device"
+webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
+webtalk_add_data -client project -key random_id -value "deb72581a67350c18374962e82db77a1" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_id -value "a489b0f2-1286-4370-a9d3-4932277f8e62" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "2" -context "software_version_and_target_device"
+webtalk_add_data -client project -key os_name -value "Ubuntu" -context "user_environment"
+webtalk_add_data -client project -key os_release -value "Ubuntu 14.04.4 LTS" -context "user_environment"
+webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i3-3227U CPU @ 1.90GHz" -context "user_environment"
+webtalk_add_data -client project -key cpu_speed -value "1900.000 MHz" -context "user_environment"
+webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
+webtalk_add_data -client project -key system_ram -value "8.000 GB" -context "user_environment"
+webtalk_register_client -client labtool
+webtalk_add_data -client labtool -key pgmcnt -value "00:00:00" -context "labtool\\usage"
+webtalk_add_data -client labtool -key cable -value "" -context "labtool\\usage"
+webtalk_transmit -clientid 2229917836 -regid "211159377_1777515258_0_320" -xml /home/jrvgnzlz/EE_316_Labs/Lab_7_Vivado/project_7/project_7.hw/webtalk/usage_statistics_ext_labtool.xml -html /home/jrvgnzlz/EE_316_Labs/Lab_7_Vivado/project_7/project_7.hw/webtalk/usage_statistics_ext_labtool.html -wdm /home/jrvgnzlz/EE_316_Labs/Lab_7_Vivado/project_7/project_7.hw/webtalk/usage_statistics_ext_labtool.wdm -intro "<H3>LABTOOL Usage Report</H3><BR>"
+webtalk_terminate
